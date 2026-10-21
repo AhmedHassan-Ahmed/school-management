@@ -1,1 +1,24 @@
-{"name":"school-management-api","version":"1.0.0","private":true,"scripts":{"dev":"tsx watch src/server.ts","build":"tsc","start":"node dist/server.js"},"dependencies":{"dotenv":"^16.4.7","express":"^4.21.2","mongoose":"^8.9.5"},"devDependencies":{"@types/express":"^5.0.0","@types/node":"^22.10.5","tsx":"^4.19.2","typescript":"^5.7.2"}}
+{
+  "name": "school-management-api",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.20.5",
+    "bcrypt": "^6.0.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
