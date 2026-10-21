@@ -1,3 +1,1 @@
-export interface ISubject {
-  name: string;
-}
+export interface ISubject { name: string; }

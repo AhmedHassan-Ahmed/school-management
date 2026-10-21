@@ -1,7 +1,5 @@
 import { Schema, model } from "mongoose";
-import type { IUser, UserRole } from "./user.interface.js";
-
-const userRoles: UserRole[] = ["admin", "teacher", "student"];
+import type { IUser } from "./user.interface";
 
 const userSchema = new Schema<IUser>(
   {
@@ -15,7 +13,13 @@ const userSchema = new Schema<IUser>(
     },
     phone: { type: String, trim: true },
     passwordHash: { type: String, required: true, select: false },
-    role: { type: String, enum: userRoles, required: true },
+    role: {
+      type: String,
+      enum: ["admin", "teacher", "student"],
+      default: "student",
+    },
+    refreshTokenHash: { type: String, select: false },
+    isActive: { type: Boolean, default: true },
   },
   { timestamps: true },
 );

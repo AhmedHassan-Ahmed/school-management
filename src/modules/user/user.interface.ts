@@ -8,6 +8,8 @@ export interface IUser extends Document {
   phone?: string;
   passwordHash: string;
   role: UserRole;
-  createdAt?: Date;
-  updatedAt?: Date;
+  refreshTokenHash?: string;
+  isActive: boolean;
+  createdAt: Date;
+  updatedAt: Date;
 }
