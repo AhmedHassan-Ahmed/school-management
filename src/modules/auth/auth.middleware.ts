@@ -33,7 +33,7 @@ export const authenticate: RequestHandler = async (req, _res, next) => {
 
   req.user = {
     id: String(user._id),
-    name: user.name,
+    name: user.name, 
     email: user.email,
     role: user.role,
   };
