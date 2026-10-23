@@ -7,7 +7,7 @@ export type DayOfWeek =
   | "Wednesday"
   | "Thursday"
   | "Friday";
-export interface ITimetable {
+export interface Interface_Timetable {
   classId: Types.ObjectId;
   teacherId: Types.ObjectId;
   subjectId: Types.ObjectId;

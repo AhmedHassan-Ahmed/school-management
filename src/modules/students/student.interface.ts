@@ -1,5 +1,5 @@
 import { Types } from "mongoose";
-export interface IStudent {
+export interface Interface_Student {
   name: string;
   studentCode: string;
   email?: string;

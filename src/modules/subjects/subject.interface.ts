@@ -1,1 +1,3 @@
-export interface ISubject { name: string; }
+export interface Interface_Subject {
+  name: string;
+}

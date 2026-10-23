@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
-import { IStudent } from "./student.interface";
-const studentSchema = new Schema<IStudent>(
+import { Interface_Student } from "./student.interface";
+const studentSchema = new Schema<Interface_Student>(
   {
     name: { type: String, required: true, trim: true },
     studentCode: { type: String, required: true, trim: true },
@@ -11,5 +11,5 @@ const studentSchema = new Schema<IStudent>(
   { timestamps: true },
 );
 studentSchema.index({ studentCode: 1 }, { unique: true });
-const Student = model<IStudent>("Student", studentSchema);
+const Student = model<Interface_Student>("Student", studentSchema);
 export default Student;

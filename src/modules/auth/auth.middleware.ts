@@ -8,14 +8,22 @@ export const authenticate: RequestHandler = async (req, _res, next) => {
   const header = req.headers.authorization;
 
   if (!header?.startsWith("Bearer ")) {
-    throw new AppError(401, "UNAUTHORIZED", "Please provide a Bearer access token");
+    throw new AppError(
+      401,
+      "UNAUTHORIZED",
+      "Please provide a Bearer access token",
+    );
   }
 
   const payload = verifyAccessToken(header.slice(7));
   const session = await Session.findById(payload.sessionId);
 
   if (!session || session.revokedAt || session.expiresAt <= new Date()) {
-    throw new AppError(401, "INVALID_SESSION", "Session is expired or logged out");
+    throw new AppError(
+      401,
+      "INVALID_SESSION",
+      "Session is expired or logged out",
+    );
   }
 
   const user = await User.findById(payload.userId);

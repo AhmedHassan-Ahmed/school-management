@@ -1,13 +1,13 @@
 import { Schema, model, Types, type Document } from "mongoose";
 
-export interface ISession extends Document {
+export interface Interface_Session extends Document {
   userId: Types.ObjectId;
   refreshTokenHash: string;
   expiresAt: Date;
   revokedAt?: Date | null;
 }
 
-const sessionSchema = new Schema<ISession>(
+const sessionSchema = new Schema<Interface_Session>(
   {
     userId: {
       type: Schema.Types.ObjectId,
@@ -23,5 +23,5 @@ const sessionSchema = new Schema<ISession>(
 );
 sessionSchema.index({ expiresAt: 1 }, { expireAfterSeconds: 0 });
 
-const Session = model<ISession>("Session", sessionSchema);
+const Session = model<Interface_Session>("Session", sessionSchema);
 export default Session;

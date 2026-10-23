@@ -6,7 +6,7 @@ const cookieOptions = {
   httpOnly: true,
   secure: process.env.NODE_ENV === "production",
   sameSite: "strict" as const,
-  path: "/api/v1/auth",
+  path: "/api/auth",
   maxAge:
     Number(process.env.REFRESH_TOKEN_EXPIRES_IN_DAYS || 7) *
     24 *

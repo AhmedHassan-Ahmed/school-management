@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
-import { ITeacher } from "./teacher.interface";
-const teacherSchema = new Schema<ITeacher>(
+import { Interface_Teacher } from "./teacher.interface";
+const teacherSchema = new Schema<Interface_Teacher>(
   {
     name: { type: String, required: true, trim: true },
     email: { type: String, required: true, trim: true },
@@ -8,5 +8,5 @@ const teacherSchema = new Schema<ITeacher>(
   },
   { timestamps: true },
 );
-const Teacher = model<ITeacher>("Teacher", teacherSchema);
+const Teacher = model<Interface_Teacher>("Teacher", teacherSchema);
 export default Teacher;
