@@ -63,7 +63,6 @@ Each module follows a feature-based structure, keeping models, interfaces, contr
 - Search and pagination
 - Timetable conflict validation
 
-
 ### 2. Install Dependencies
 
 ```bash
@@ -103,12 +102,12 @@ npm start
 
 ## Data Models
 
-| Model | Purpose |
-|---|---|
-| Student | Stores student information and class reference |
-| Teacher | Stores teacher information |
-| Class | Stores class name and grade level |
-| Subject | Stores subject information |
+| Model     | Purpose                                                  |
+| --------- | -------------------------------------------------------- |
+| Student   | Stores student information and class reference           |
+| Teacher   | Stores teacher information                               |
+| Class     | Stores class name and grade level                        |
+| Subject   | Stores subject information                               |
 | Timetable | Stores class, teacher, subject, day, and time references |
 
 ## Development Approach

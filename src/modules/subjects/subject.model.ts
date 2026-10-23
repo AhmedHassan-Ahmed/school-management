@@ -1,8 +1,8 @@
 import { Schema, model } from "mongoose";
-import { ISubject } from "./subject.interface";
-const subjectSchema = new Schema<ISubject>(
+import { Interface_Subject } from "./subject.interface";
+const subjectSchema = new Schema<Interface_Subject>(
   { name: { type: String, required: true, trim: true } },
   { timestamps: true },
 );
-const Subject = model<ISubject>("Subject", subjectSchema);
+const Subject = model<Interface_Subject>("Subject", subjectSchema);
 export default Subject;
