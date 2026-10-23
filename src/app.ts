@@ -3,6 +3,7 @@ import cookieParser from "cookie-parser";
 import authRoutes from "./modules/auth/auth.routes";
 import errorHandler from "./middlewares/errorHandler";
 import adminRoutes from "./modules/admin/admin.routes";
+import classRoutes from "./modules/classes/class.routes";
 
 const app = express();
 
@@ -16,6 +17,9 @@ app.get("/api/health", (_req, res) => {
 app.use("/api/auth", authRoutes);
 
 app.use("/api/admin", adminRoutes);
+
+app.use("/api/classes", classRoutes);
+
 
 app.use((_req, res) => {
   res.status(404).json({
