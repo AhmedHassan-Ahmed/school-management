@@ -4,7 +4,6 @@ const objectId = z.string().regex(/^[a-f\d]{24}$/i, "Invalid ID");
 
 export const createTeacherSchema = z.object({
   body: z.object({
-    // ID of an existing User whose role is "teacher".
     teacherId: objectId,
     teacherCode: z.string().trim().min(1, "Teacher code is required").max(30),
     specialization: z.string().trim().max(100).optional(),
