@@ -1,8 +1,9 @@
-import { Types } from "mongoose";
-export interface Interface_Student {
-  name: string;
+import type { Document, Types } from "mongoose";
+
+export interface Interface_Student extends Document {
+  userId: Types.ObjectId;
   studentCode: string;
-  email?: string;
-  phone?: string;
   classId: Types.ObjectId;
+  createdAt: Date;
+  updatedAt: Date;
 }
