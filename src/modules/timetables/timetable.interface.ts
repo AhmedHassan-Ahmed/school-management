@@ -1,4 +1,5 @@
-import { Types } from "mongoose";
+import type { Document, Types } from "mongoose";
+
 export type DayOfWeek =
   | "Saturday"
   | "Sunday"
@@ -7,11 +8,14 @@ export type DayOfWeek =
   | "Wednesday"
   | "Thursday"
   | "Friday";
-export interface Interface_Timetable {
+
+export interface ITimetable extends Document {
   classId: Types.ObjectId;
   teacherId: Types.ObjectId;
   subjectId: Types.ObjectId;
   dayOfWeek: DayOfWeek;
   startTime: string;
   endTime: string;
+  createdAt: Date;
+  updatedAt: Date;
 }

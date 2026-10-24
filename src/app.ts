@@ -7,6 +7,7 @@ import classRoutes from "./modules/classes/class.routes";
 import studentRoutes from "./modules/students/student.routes";
 import teacherRoutes from "./modules/teachers/teacher.routes";
 import subjectRoutes from "./modules/subjects/subject.routes";
+import timetableRoutes from "./modules/timetables/timetable.routes";
 
 const app = express();
 
@@ -28,6 +29,8 @@ app.use("/api/students", studentRoutes);
 app.use("/api/teachers", teacherRoutes);
 
 app.use("/api/subjects", subjectRoutes);
+
+app.use("/api/timetables", timetableRoutes);
 
 app.use((_req, res) => {
   res.status(404).json({
