@@ -5,6 +5,7 @@ import errorHandler from "./middlewares/errorHandler";
 import adminRoutes from "./modules/admin/admin.routes";
 import classRoutes from "./modules/classes/class.routes";
 import studentRoutes from "./modules/students/student.routes";
+import teacherRoutes from "./modules/teachers/teacher.routes";
 
 const app = express();
 
@@ -22,6 +23,8 @@ app.use("/api/admin", adminRoutes);
 app.use("/api/classes", classRoutes);
 
 app.use("/api/students", studentRoutes);
+
+app.use("/api/teachers", teacherRoutes);
 
 app.use((_req, res) => {
   res.status(404).json({
