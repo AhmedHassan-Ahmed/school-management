@@ -1,4 +1,5 @@
 import AppError from "../../error/AppError";
+import Timetable from "../timetables/timetable.model";
 import User from "../user/user.model";
 import Teacher from "./teacher.model";
 
@@ -178,6 +179,17 @@ export async function updateTeacher(
 }
 
 export async function deleteTeacher(id: string) {
+  const existingTimetable = await Timetable.exists({
+    teacherId: id,
+  });
+
+  if (existingTimetable) {
+    throw new AppError(
+      409,
+      "TEACHER_HAS_TIMETABLE",
+      "Cannot delete a teacher assigned to a timetable",
+    );
+  }
   const teacher = await Teacher.findByIdAndDelete(id);
   if (!teacher) {
     throw new AppError(
